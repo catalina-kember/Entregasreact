@@ -14,7 +14,6 @@ export const NavBar = () => (
                 <Nav.Link href="#pricing">Contacto</Nav.Link>
             </Nav>
             <CardWidget />
-            <ItemListContainer greeting="Bienvendios!" />
         </Container>
     </Navbar>
 );
