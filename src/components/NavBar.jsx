@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { CardWidget } from "./CartWidget";
-import { ItemListContainer } from "./ItemListContainer"
+
 
 export const NavBar = () => (
     <Navbar bg="dark" data-bs-theme="dark">
