@@ -1,56 +1,56 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name_product": "Remeras lisas",
         "descrpition": "Remeras",
         "stock": 28,
         "img": "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=327&q=80" 
     },
     {
-        "id": 2,
+        "id": "2",
         "name_product": "Vestido Cremita",
-        "descrpition": "Vestidos verano",
+        "descrpition": "Vestidos",
         "stock": 53,
         "img": "https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
 
     },
     {
-        "id": 3,
+        "id": "3",
         "name_product": "Camperas de jean",
-        "descrpition": "Camperas",
+        "descrpition": "Abrigo",
         "stock": 97,
         "img":"https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
     },
     {
-        "id": 4,
+        "id": "4",
         "name_product": "Poncho Tejido a Crochet",
         "descrpition": "Abrigo",
         "stock": 16,
         "img":"https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=405&q=80"
     },
     {
-        "id": 5,
+        "id":" 5",
         "name_product": "Vestidos floreados",
-        "descrpition": "Vestidos Verano",
+        "descrpition": "Vestidos",
         "stock": 41,
         "img":"https://images.unsplash.com/photo-1628705077470-21ff5a207b47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=390&q=80"
     },
     {
-        "id": 6,
+        "id": "6",
         "name_product": "buzo con capucha",
         "descrpition": "Abrigo",
         "stock": 91,
         "img":"https://images.unsplash.com/photo-1615397587950-3cbb55f95b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
     },
     {
-        "id": 7,
+        "id":" 7",
         "name_product": "Buzo sin Capucha",
         "descrpition": "Abrigo",
         "stock": 19,
         "img":"https://images.unsplash.com/photo-1611246164691-97f352683561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
     },
     {
-        "id": 8,
+        "id": "8",
         "name_product": "Poncho de Lana",
         "descrpition": "Abrigo",
         "stock": 31

@@ -5,3 +5,12 @@ span{
   color: white;
   padding-left: 1.5rem;
 }
+.itemCount{
+  color: black;
+  padding: 0.5em;
+}
+.divTargets{
+  display:flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
