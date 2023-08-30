@@ -32,7 +32,6 @@ export const ItemDetailContainer = (props) => {
     
     return (
         <Container>
-            <h1>{props.greeting}</h1>
             <h1>Detalles</h1>
             <ItemDetail product={product}/>
         </Container>

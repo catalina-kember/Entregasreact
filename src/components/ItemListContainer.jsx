@@ -37,7 +37,13 @@ export const ItemListContainer = (props) => {
 
     return (
         <Container>
-            <h1>{props.greeting}</h1>
+            <section className="contenedor-header">
+                <div className="header-titulos">
+                    <h1 className="titulo-header" data-aos="zoom-in-left">MERAKI</h1>
+                    <h2 className="subtitulo-header" data-aos="zoom-in-left">DECORACION PARA EL HOGAR</h2>
+                </div>
+            </section>
+            <h1 className="greeting">{props.greeting}</h1>
             <div className="divTargets">
                 <ItemList products={products}></ItemList>
             </div>
