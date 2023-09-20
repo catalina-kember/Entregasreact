@@ -1,40 +1,36 @@
 import Container from "react-bootstrap/Container"
-
+import { getFirestore, getDocs, collection } from "firebase/firestore"
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import data from "../data/data.json";
 
-import {ItemList} from "./ItemList"
+import { ItemList } from "./ItemList"
 
 
 export const ItemListContainer = (props) => {
 
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
     console.log(id)
-    
     useEffect(() => {
-
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(data), 2000)
-        })
-        
-        promise.then(data =>{
-            if(!id){
-                setProducts(data)
-            }else {
-                const productsFiltered = data.filter(product=>product.description === id 
+        const db = getFirestore();
+        const refCollection = collection(db, "productos");
+        getDocs(refCollection).then((snapshot) => {
+            if (snapshot.size === 0) console.log("sin resultados")
+            else
+                setProducts(
+                    snapshot.docs.map((doc) => {
+                        return { id: doc.id, ...doc.data() }
+                    })
                 );
-                setProducts (productsFiltered);
-            }
-            
+
         })
-
-        promise.catch(error => console.log(error))
-
-    }, [])
-
+            .finally(() => {
+                setLoading(false)
+            })
+    }, []);
+    if(loading) return <div>Cargando...</div>
     return (
         <Container>
             <section className="contenedor-header">
@@ -51,3 +47,5 @@ export const ItemListContainer = (props) => {
     );
 
 };
+
+

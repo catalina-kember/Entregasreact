@@ -1,8 +1,9 @@
-import { useState } from "react";
 
-const stock = 4;
+import {  useState } from "react";
 
-export const ItemCount = () =>{
+
+
+export const ItemCount = ({onAdd, stock}) =>{
 
     const [count, setCount] = useState(1);
 
@@ -18,9 +19,7 @@ export const ItemCount = () =>{
         }
     };
 
-    const onAdd = () =>{
-        alert (count);
-    }
+    
 
     return(
     
@@ -28,7 +27,7 @@ export const ItemCount = () =>{
             <span onClick={handleDecreaseCount}>-</span>
             <span>{count}</span>
             <span onClick={handleIncreaseCount}>+</span>
-            <button onClick={onAdd}>Agregar al carrito</button>
+            <button onClick={onAdd(count)}>Agregar al carrito</button>
         </div>
         
     );
