@@ -5,12 +5,12 @@ export const CardContext = createContext([])
 
 export const CardProvider = ({children}) =>{ 
     
-    const {objects, setObjects} = useState([])
+    const [objects, setObjects] = useState([])
     
     const addItem =(product, quantity)=> {
         const exsist = objects.some(object => object.id == product.id)
         
-        if (!exsist) setObjects(prev => [...prev], {...product, quantity})
+        if (!exsist) setObjects(prev => [...prev , {...product , quantity} ])
         
         else{
             const actualizar = objects.map(object=>{

@@ -8,8 +8,6 @@ import { Cart } from "./components/Cart";
 import { ItemDetail } from "./components/ItemDetail";
 
 function App() {
-  
-
   return (
     <CardProvider>
       <BrowserRouter>

@@ -1,6 +1,7 @@
 import { Button, Container, Table } from "react-bootstrap"
 import { useContext, useState } from "react";
 import { CardContext } from "../contexts/CardContex";
+import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import Form from 'react-bootstrap/Form';
 
@@ -16,7 +17,7 @@ export const Cart = () => {
         email: ""
     })
 
-    const {clear,  objects, removeObject } = useContext(CardContext)
+    const { clear, objects, removeObject } = useContext(CardContext)
 
 
 
@@ -34,32 +35,40 @@ export const Cart = () => {
             [ev.target.name]: ev.target.value
         }))
     }
+    
+    
     const sendOrder = () => {
-        const order = {
+        const order = ({
             buyer: formValues,
             objects: objects,
-            total: total()
-        }
+            total: total(),
+        })
 
     };
-    const db = getFirestore();
-    const orderCollection = collection(db, "orders");
 
-    addDoc(orderCollection, order).then(({ id }) => {
+    
+    const firebaseConfig = {
+        const db = getFirestore()
+        const orderCollection = collection(db, "orders")
+        addDoc(orderCollection, order).then(({ id }) => {
 
-        if (id) {
-            setFormValues({
-                name: "",
-                phone: "",
-                email: "",
+            if (id) {
+                setFormValues({
+                    name: "",
+                    phone: "",
+                    email: "",
+                }
+                )
             }
-        )}
-        clear()
-        console.log("orden con id" + id + "fue creada con exito");
-
-    });
-
-
+            clear()
+            console.log("orden con id" + id + "fue creada con exito");
+    
+        }),
+    
+    };
+    const app = initializeApp(firebaseConfig);
+    
+    
 
     return (
         <Container>
