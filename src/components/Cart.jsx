@@ -35,19 +35,15 @@ export const Cart = () => {
             [ev.target.name]: ev.target.value
         }))
     }
-    
-    
+    const order = ({
+        buyer: formValues,
+        objects: objects,
+        total: total(),
+    })
     const sendOrder = () => {
-        const order = ({
-            buyer: formValues,
-            objects: objects,
-            total: total(),
-        })
-
+        order()
     };
-
-    
-    const firebaseConfig = {
+    const firebaseConfig = () =>{
         const db = getFirestore()
         const orderCollection = collection(db, "orders")
         addDoc(orderCollection, order).then(({ id }) => {
@@ -63,9 +59,9 @@ export const Cart = () => {
             clear()
             console.log("orden con id" + id + "fue creada con exito");
     
-        }),
-    
+        });
     };
+    
     const app = initializeApp(firebaseConfig);
     
     
