@@ -1,11 +1,9 @@
 import { Button, Container, Table } from "react-bootstrap"
 import { useContext, useState } from "react";
 import { CardContext } from "../contexts/CardContex";
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import Form from 'react-bootstrap/Form';
-
-
+import {db} from '../index'
 
 
 
@@ -18,9 +16,6 @@ export const Cart = () => {
     })
 
     const { clear, objects, removeObject } = useContext(CardContext)
-
-
-
     const total = () =>
         objects.reduce(
             (acumulador, valorAcumulado) =>
@@ -41,10 +36,6 @@ export const Cart = () => {
         total: total(),
     })
     const sendOrder = () => {
-        order()
-    };
-    const firebaseConfig = () =>{
-        const db = getFirestore()
         const orderCollection = collection(db, "orders")
         addDoc(orderCollection, order).then(({ id }) => {
 
@@ -58,14 +49,8 @@ export const Cart = () => {
             }
             clear()
             console.log("orden con id" + id + "fue creada con exito");
-    
         });
     };
-    
-    const app = initializeApp(firebaseConfig);
-    
-    
-
     return (
         <Container>
             <h1>Carrito</h1>
@@ -100,8 +85,7 @@ export const Cart = () => {
                     </tr>
                 </tfoot>
             </Table>
-            <button onClick={sendOrder}>Comprar</button>
-
+            
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>nombre</Form.Label>
@@ -138,9 +122,6 @@ export const Cart = () => {
         </Container>
     )
 
-}
-
-
-
+};
 
 

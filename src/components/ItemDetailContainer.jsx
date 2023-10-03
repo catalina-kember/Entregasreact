@@ -1,9 +1,5 @@
-import Container from "react-bootstrap/Container"
-
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
-
 import { ItemDetail } from "./ItemDetail";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 
@@ -17,11 +13,11 @@ export const ItemDetailContainer = (props) => {
 
     useEffect(() => {
         const db=getFirestore();
-        const refDoc = doc(db, "productos");
+        const refDoc = doc(db, "productos", id);
         getDoc(refDoc).then((snapshot)=>{
             setProduct({id:snapshot.id, ...snapshot.data()})
         }).finally (()=>setLoading(false))
-    },[]);
+    },[id]);
 
 
     if(loading) return <div>Cargando...</div>

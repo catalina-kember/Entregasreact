@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './index.css';
 import { initializeApp } from "firebase/app";
+import { getFirestore } from 'firebase/firestore';
 import App from './App';
 
 const firebaseConfig = {
@@ -14,12 +16,14 @@ const firebaseConfig = {
   measurementId: "G-NN5EWSR1DE"
 };
 
-
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app)
 const root=ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>
     <App/>
   </React.StrictMode>
 )
+
 
 
