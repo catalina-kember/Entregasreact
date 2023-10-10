@@ -1,6 +1,6 @@
 import { Button, Container, Table } from "react-bootstrap";
 import { useContext, useState } from "react";
-import { CardContext } from "../contexts/CardContext";
+import { CardContext } from "../contexts/CardContex";
 import { collection, addDoc } from "firebase/firestore";
 import Form from 'react-bootstrap/Form';
 import { db } from '../index';

@@ -11,11 +11,11 @@ export const Item = ({ product }) => (
 		/>
 		<Card.Body>
 			<Card.Title>{product.nombre}</Card.Title>
-			<Card.Text>Descripción: {product.descripcion}</Card.Text> {/* Corrige la propiedad "descripcion" */}
-			<Card.Text>Precio: ${product.precio}</Card.Text> {/* Agrega el signo "$" antes del precio */}
+			<Card.Text>Descripción: {product.descripcion}</Card.Text> 
+			<Card.Text>Precio: ${product.precio}</Card.Text>
 			<Card.Text>Stock: {product.stock}</Card.Text>
 			<Link to={`/item/${product.id}`}>
-				<Button variant="primary">Ver</Button> {/* Cambia "ver" a "Ver" */}
+				<Button variant="primary">Ver</Button> 
 			</Link>
 		</Card.Body>
 	</Card>
