@@ -1,32 +1,42 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "./ItemDetail";
-import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { Container } from "react-bootstrap"; 
 
-
-
-export const ItemDetailContainer = (props) => {
-
-    const [product, setProduct] = useState(null)
+export const ItemDetailContainer = () => {
+    const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
-    const {id} = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-        const db=getFirestore();
-        const refDoc = doc(db, "productos", id);
-        getDoc(refDoc).then((snapshot)=>{
-            setProduct({id:snapshot.id, ...snapshot.data()})
-        }).finally (()=>setLoading(false))
-    },[id]);
+        const fetchProduct = async () => {
+            try {
+                const db = getFirestore();
+                const docRef = doc(db, "productos", id);
+                const snapshot = await getDoc(docRef);
 
+                if (snapshot.exists()) {
+                    setProduct({ id: snapshot.id, ...snapshot.data() });
+                } else {
+                    console.log("No se encontró el producto.");
+                }
+            } catch (error) {
+                console.error("Error al obtener el producto:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    if(loading) return <div>Cargando...</div>
-    
+        fetchProduct();
+    }, [id]);
+
+    if (loading) return <div>Cargando...</div>;
+
     return (
         <Container>
             <h1>Detalles</h1>
-            <ItemDetail product={product}/>
+            {product && <ItemDetail product={product} />} 
         </Container>
     );
-
 };
