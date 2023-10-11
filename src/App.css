@@ -48,12 +48,12 @@ span{
 }
 
 .titleDivTargets{
-  font-size: 6rem;
+  font-size: 2rem;
   color: #ccd5ae;
 }
 
 .imgDivTargets{
-  width: 70%;
-  height:80% ;
+  width: 30%;
+  height:40% ;
   margin: 2%;
 }

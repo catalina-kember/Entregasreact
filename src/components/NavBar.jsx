@@ -13,7 +13,7 @@ const ProductDescription = () => {
 };
 
 export const NavBar = () => (
-    <BrowserRouter>
+    <>
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
                 <Navbar.Brand as={Link} to="/">Ecommerce</Navbar.Brand>
@@ -27,11 +27,7 @@ export const NavBar = () => (
             </Container>
         </Navbar>
 
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/description/:product" element={<ProductDescription />} />
-        </Routes>
-    </BrowserRouter>
+    </>
 );
 
 
