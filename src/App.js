@@ -15,10 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListContainer greeting="Bienvenidos!" />} /> 
           <Route path="/cart" element={<Cart />} /> 
-          <Route path="/description/:id" element={<ItemListContainer greeting="Bienvenidos!" />} /> 
+          <Route path="/category/:id" element={<ItemListContainer greeting="Bienvenidos!" />} /> 
           <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/item-detail/:descripcion" element={ItemDetail} /> 
-          <Route path="/product/:productId" element={<ItemDetailContainer />} />
+          <Route path="*" element={<h1>no se encontro</h1>} /> 
         </Routes>
       </BrowserRouter>
     </CardProvider>
