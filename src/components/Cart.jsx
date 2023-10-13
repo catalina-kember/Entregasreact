@@ -1,4 +1,4 @@
-import { Button, Container, Table } from "react-bootstrap";
+import { Button, Container, Table, Alert } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { CardContext } from "../contexts/CardContex";
 import { collection, addDoc } from "firebase/firestore";
@@ -7,7 +7,6 @@ import { db } from '../index';
 
 export const Cart = () => {
     const { clear, objects, removeObject } = useContext(CardContext);
-
     const [formValues, setFormValues] = useState({
         name: "",
         phone: "",
@@ -21,7 +20,6 @@ export const Cart = () => {
             return 0;
         }
     };
-
 
     const handleChange = (ev) => {
         const { name, value } = ev.target;
@@ -49,37 +47,40 @@ export const Cart = () => {
     return (
         <Container>
             <h1>Carrito</h1>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {objects && objects.map((object) => (
-                        <tr key={object.id}>
-                            <td>{object.nombre}</td>
-                            <td>{object.precio}</td>
-                            <td>{object.quantity}</td>
-                            <td>
-                                <Button variant="eliminar" onClick={() => removeObject(object.id)}>
-                                    Eliminar
-                                </Button>
-                            </td>
+            {objects && objects.length > 0 ? (
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Eliminar</th>
                         </tr>
-                    ))}
-                </tbody>
-
-                <tfoot>
-                    <tr>
-                        <td>Total</td>
-                        <td colSpan="3">{total()}</td>
-                    </tr>
-                </tfoot>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {objects.map((object) => (
+                            <tr key={object.id}>
+                                <td>{object.nombre}</td>
+                                <td>{object.precio}</td>
+                                <td>{object.quantity}</td>
+                                <td>
+                                    <Button variant="danger" onClick={() => removeObject(object.id)}>
+                                        Eliminar
+                                    </Button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colSpan="3">Total</td>
+                            <td>{total()}</td>
+                        </tr>
+                    </tfoot>
+                </Table>
+            ) : (
+                <Alert variant="warning">El carrito está vacío</Alert>
+            )}
 
             <Form>
                 <Form.Group className="mb-3" controlId="name">

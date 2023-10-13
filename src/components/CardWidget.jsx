@@ -8,8 +8,7 @@ const CardWidget = () => {
 
         return (
                 <Link to="/Cart">
-                        <img src={CartImage} alt="Cart" />
-                        {totalWidget > 0 && <span>{totalWidget}</span>}
+                        <img src={CartImage} alt="Cart" /><span>{totalWidget}</span>
                 </Link>
         );
 };

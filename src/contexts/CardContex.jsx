@@ -27,6 +27,7 @@ export const CardProvider = ({children}) =>{
             setObjects(actualizar)
         }
     }
+    
     const totalWidget=  objects.reduce((acc, val) => acc+val.quantity, 0)
     console.log(totalWidget)
 

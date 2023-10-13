@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ItemList } from "./ItemList";
 
+
 export const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -47,7 +48,7 @@ export const ItemListContainer = (props) => {
                         MERAKI
                     </h1>
                     <h2 className="subtitulo-header" data-aos="zoom-in-left">
-                        DECORACION PARA EL HOGAR
+                        INDUMENTARIA
                     </h2>
                 </div>
             </section>
@@ -58,4 +59,3 @@ export const ItemListContainer = (props) => {
         </Container>
     );
 };
-

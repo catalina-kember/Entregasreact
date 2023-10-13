@@ -7,7 +7,7 @@ span{
   padding-left: 1.5rem;
 }
 
-.itemCount{
+.itemCount span{
   color: black;
   padding: 0.5em;
 }
@@ -48,7 +48,7 @@ span{
 }
 
 .titleDivTargets{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ccd5ae;
 }
 
@@ -56,4 +56,8 @@ span{
   width: 30%;
   height:40% ;
   margin: 2%;
+}
+
+.infoDivTargets{
+  font-size: 1rem;
 }

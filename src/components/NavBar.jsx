@@ -2,15 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import CardWidget from "./CardWidget"; 
-import { Link, BrowserRouter, Route, Routes, useParams } from 'react-router-dom'; // Importa BrowserRouter y otros componentes necesarios
+import { Link,  useParams } from 'react-router-dom'; 
 import { Navbar } from 'react-bootstrap';
 
-const Home = () => <div>¡Bienvenido a la página de inicio!</div>;
-
-const ProductDescription = () => {
-    const { product } = useParams();
-    return <div>Descripción de {product}</div>;
-};
 
 export const NavBar = () => (
     <>

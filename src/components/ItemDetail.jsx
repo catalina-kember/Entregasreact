@@ -14,13 +14,13 @@ export const ItemDetail = ({ product }) => {
             <img className="imgDivTargets" src={product.imagen} alt={product.nombre} />
             <h1 className="titleDivTargets">{product.nombre}</h1>
             <div>
-                <h3 className="descripcionDivTargets">Descripción: {product.descripcion}</h3>
+                <h3 className="infoDivTargets">Descripción: {product.descripcion}</h3>
             </div>
             <div>
-                <h3 className="stockDivTargets">Stock disponible: {product.stock}</h3>
+                <h3 className="infoDivTargets">Stock disponible: {product.stock}</h3>
             </div>
             <div>
-                <h3 className="precioDivTargets">Precio: ${product.precio}</h3>
+                <h3 className="infoDivTargets">Precio: ${product.precio}</h3>
             </div>
             <ItemCount stock={product.stock} onAdd={onAdd} />
         </div>
